@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //shoping discount 
+
+        let purchaseAmount = 120;
+         let discount;
+
+
+         if(purchaseAmount>=100){
+            discount=20
+         }else if(purchaseAmount>=50){
+            discount=10
+         }else{
+            discount=0;
+         }
+         document.write("Discount:"+ discount +"%")
+         console.log("Discount:"+ discount +"%")
+
+         //time of day greeting
+         let currentTime= new Date();
+         let currentHour = currentTime.getHours();
+         let greeting;
+         if(currentHour<12){
+            greeting ="Good Morning"
+         }else if(currentHour<18){
+            greeting ="Good Afternoon"
+         }else{
+            greeting = "Good Evening"
+         }
+         console.log(greeting)
+        document.write(greeting)
+
+
+         //determine leap year
+          let year = 2024;
+          if(year%4==0 &&(year % 100 !==0  || year%400 === 0)){
+            document.write(year+ " is a leap year")
+            console.log(year+ " is a leap year")
+          }else{
+            document.write(year+ " is not leap year")
+            console.log(year+ " is not leap year")
+          }
+
+
+        // while(purchaseAmount==0){
+        //     discount =20;
+        //     if(purchaseAmount>=50){
+        //         discount =10;
+        //     }else{
+        //         discount =0
+        //     }
+        //     discount++
+            // console.log(discount)
+        // }
+    </script>
+</body>
+</html>

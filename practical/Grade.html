@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark Document</title>
+  </head>
+  <body>
+    <input type="text" id="x" />
+    <br /><br />
+    <button onclick="test()">Submit</button>
+    <h2 id="grade"></h2>
+
+    <script>
+      function test() {
+        let mark = document.getElementById("x").value;
+
+        if (mark == "") {
+          document.getElementById("x").style.border = "1px solid red";
+          document.getElementById("grade").innerHTML =
+            "please input some valid number";
+          document.getElementById("grade").style.color = "red";
+        } else {
+          // document.getElementById("grade").innerHTML = "";
+          if (isNaN(mark)) {
+            document.getElementById("x").style.border = "1px solid red";
+            document.getElementById("grade").innerHTML = "Input valid Number";
+            // return;
+          } else {
+            if (mark >= 0 && mark <= 100) {
+              if (mark > 79 && mark <= 100) {
+                document.getElementById("grade").innerHTML = "Grade = 'A+'";
+                document.getElementById("grade").style.color = "green";
+              } else if (mark > 69 && mark < 80) {
+                document.getElementById("grade").innerHTML = "Grade = 'A'";
+                document.getElementById("grade").style.color = "green";
+              } else if (mark > 59 && mark < 70) {
+                document.getElementById("grade").innerHTML = "Grade = 'A-'";
+                document.getElementById("grade").style.coloe = "green";
+              } else {
+                document.getElementById("grade").innerHTML = "F";
+              }
+            } else {
+              document.getElementById("grade").innerHTML =
+                "*Please give valid number from 0-100";
+              document.getElementById("grade").style.color = "red";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

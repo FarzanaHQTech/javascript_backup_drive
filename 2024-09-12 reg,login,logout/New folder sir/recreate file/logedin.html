@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Document</title>
+</head>
+<body>
+    <form action="" id="frm">
+        <input type="email" placeholder="Enter your email" id="email" >
+        <input type="password" placeholder="Enter your Password" id="password" >
+        <input type ="submit" value="Login">
+    </form>
+    <script>
+        document.querySelector("frm").addEventListener("submit", function(el){
+            el.preventDefault()
+            let em = document.querySelector('#email').value
+            let pass = document.querySelector('#password').value
+            let data = JSON.parse(sessionStorage.getItem('data'))
+            if(data.email==em && pass==data.password){
+                document.cookie='logedin==true; expires=Thu, 12 Sep 2024 12:00:00 UTC';
+                window.location.assign('/reprofile.html')
+            }else{
+                alert('Somthing went wrong')
+            }
+        })
+    </script>
+</body>
+</html>

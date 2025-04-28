@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document factorial</title>
+</head>
+<body>
+    <!-- <input type="text" id="fact"><br><br>
+    <button onclick="factorial()">Check</button>
+    <h2></h2> -->
+
+    <!-- prime start here. -->
+    <input type="text" id="prime"><br><br>
+     <button onclick="primeCheck()">Check</button>
+     <h2></h2>
+
+    <!-- large number. -->
+    <input type="text" id="num1"><br><br>
+    <input type="text" id="num2"><br><br>
+    <input type="text" id="num3"><br><br>
+    <button onclick="leargeCheck()">Check</button>
+    <h1></h1>
+
+<script>
+
+
+// function factorial(){
+//     let factNum = parseFloat(document.querySelector("#fact").value)
+//     let factvalue = 1;
+//     for (let i = 1; i<= factNum; i++){
+//         factvalue*=i
+//     }document.querySelector("h2").innerHTML = factvalue
+// }
+
+
+function primeCheck(){
+    let primeNum = parseFloat(document.querySelector("#prime").value);
+    let primeValue = true;
+    for(let i = 2; i< primeNum ; i++){
+        if(primeNum % i == 0){
+            primeValue = false
+        }if(primeValue){
+            document.querySelector("h2").innerHTML=`${primeNum} is  a prime number`
+        }else{
+            document.querySelector("h2").innerHTML=`${primeNum} is not a prime number`
+        }
+    }
+}
+
+
+
+
+/*leargeCheck= () =>{
+    let first = parseFloat(document.querySelector("#num1").value)
+    let second = parseFloat(document.querySelector("#num2").value)
+    let third = parseFloat(document.querySelector("#num3").value);
+
+    let result = "";
+    if(first > second && first> third){
+        document.querySelector("h1").innerHTML = "Number A is leargest"
+    }else if(second>first && second>third){
+        document.querySelector("h1").innerHTML = "Number B is leargest"
+    }else{
+        document.querySelector("h1").innerHTML = "Number C is leargest"
+    }
+}*/
+
+
+
+
+
+//    primeCheck = () =>{
+//     let primeValue = parseInt(document.querySelector("#prime").value);
+//     let primeNum  =  true ;
+//      for(let i = 2;  i <= primeValue/2;  i++ ){
+//         if(primeValue % i == 0){
+//             primeNum = false
+//         }
+//      } 
+//      if(primeNum){
+//         document.querySelector("h1").innerHTML = `${primeValue} is a prime number`
+//      }else{
+//         document.querySelector("h1").innerHTML = `${primeValue} is not a prime number`
+//      }
+//      console.log(primeValue)
+    
+//   }
+
+// 
+
+//    const factorial = () => {
+//         let number = parseFloat(document.querySelector("#fact").value);
+//         let factNum = 1
+//         for(let i = number; i>0; i--){
+//             factNum*=i
+//         }
+//         document.querySelector("h1").innerHTML = factNum
+//         console.log(factNum)
+//     }
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Document</title>
+  </head>
+
+  <body>
+    <!-- <p>Using an object constructor:hello</p>
+
+    <p id="demo"></p> -->
+
+    <script>
+      // function findFactorial(num) {
+      //   if (num === 0) return 1;
+      //   let factorial = num * findFactorial(num - 1);
+      //   return factorial;
+      // }
+      // let f = findFactorial(5);
+      // console.log(f);
+
+      class Test {
+        x = 15;
+        y = 10;
+        constructor(b) {
+          console.log(b);
+        }
+        add(a, b) {
+          return this.x + this.y;
+        }
+        static stat() {
+          console.log("OK");
+        }
+      }
+      let obj = new Test("Bangladesh");
+      console.log(obj.add());
+      Test.stat();
+      // console.log(obj.add(4, 5));
+
+      class Abc extends Test() {
+        d = 19;
+        f() {
+          console.log(this.y);
+        }
+      }
+
+      //class prototype//
+      let abc = new Abc();
+      Abc.prototype.ff = function () {
+        console.log("from external method");
+      };
+      abc.ff();
+      // console, log(abc);
+
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      Person.prototype.age = function () {
+        return this.firstName + " " + this.lastName;
+      };
+
+      const myFather = new Person("John", "Doe", 50, "blue");
+      document.getElementById("demo").innerHTML =
+        "My father is " + myFather.name();
+    </script>
+  </body>
+</html>

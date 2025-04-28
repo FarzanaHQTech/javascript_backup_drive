@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Document</title>
+</head>
+<body>
+    <script>
+        const  newSymb = Symbol('MyKey1')
+        const mobileModel={
+            //key : Value//
+            brand : 'Redmi',
+            model : 'C13',
+            processor : 'sandgram',
+            camera: '50mp',
+            [newSymb] : 'MyKey1'
+        }
+        console.log(mobileModel)
+        console.log(mobileModel.brand);
+        console.log(mobileModel[newSymb])
+
+        /* update */
+          mobileModel.model = 'c61'
+          console.log(mobileModel)
+    //   console.log(x)
+      /* for stop  update we use = freez(variable)*/
+    //   Object.freeze(mobileModel);
+    //  mobileModel.camera = '300mp'
+    //   console.log(mobileModel)
+
+    //   console.log(Object.keys(mobileModel))
+
+      /* object method use function*/
+     function brandModel() {
+        return `mobile Brand , ${this.brand} and model is ${this.model}`;
+       console.log(mobileModel.brandModel())
+      }
+      brandModel()
+      
+      
+      /* object assign target-source multiple object combine kora*/
+      let obj1 = {
+        no1 : 10,
+        no2 : 20,
+        no3 : 30
+      }
+      let obj2 = {
+        no4 : 40,
+        no5 : 50,
+        no6 : 60
+      }
+      let obj3 = {
+        no7 : 70,
+        no8 : 80,
+        no9 : 90
+      }
+    //   const objFinal ={obj1,obj2}
+    //   console.log(objFinal)
+    //   console.log(obj1,obj2)
+
+    /* modern way*/
+    const objFinal= {...obj1,...obj2,...obj3}
+    console.log(objFinal)
+
+    /* construtor object function name er variable first letter capital*/
+    function Person(first,last){
+        this.firstNmae = /*'Ali'*/ first
+        this.lastNmae = /*'Shovo'*/ last
+    }
+    const person1 = new Person('Ali','Hossain');
+    const person2 = new Person('Shuvo','Ahmed');
+    console.log(person1)
+    console.log(person2)
+
+
+    // console.log(Person)
+
+
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form submit Document</title>
+</head>
+<body>
+    
+        <input type="text" id="name" placeholder="Your name">
+        <span id="first" style="color: red;"></span><br><br>
+        <input type="text" id="email" placeholder="Your email id">
+        <span id="second" style="color: red;"></span><br><br>
+        <input type="text" id="phone" placeholder="Your phone">
+        <span id="third" style="color: red;"></span><br><br>
+        <input type="text" id="roll" placeholder="Your roll">
+        <span id="forth" style="color: red;"></span><br><br>
+        <button onclick="obj.validate()">Submit</button>
+        <h2></h2>
+        
+
+
+    <script>
+        class Test{
+        validate = () =>{
+            
+            let name = document.querySelector("#name").value.trim();
+            let email = document.querySelector("#email").value.trim();
+            let phone = document.querySelector("#phone").value.trim();
+            let roll = document.querySelector("#roll").value.trim();
+           if(name == '' || email == '' || phone == '' || roll== '') {
+               if(name == ''){
+                document.querySelector('#first').innerHTML="*Name is required."
+                document.querySelector('#name').style.border = "1px solid red";
+               }else{
+                document.querySelector('#first').innerHTML=""
+                document.querySelector('#name').style.border = "1px solid gray";
+               }
+               if(email == ''){
+                document.querySelector('#second').innerHTML="*Email is required."
+                document.querySelector('#email').style.border = "1px solid red";
+               }else{
+               
+                let pattern = /[\w]+.@[\w]+\.[\w]/
+                if(pattern.test(email)){
+                    document.querySelector('#second').innerHTML=""
+                    document.querySelector('#email').style.border = "1px solid gray";
+                }else{
+                    document.querySelector('#second').innerHTML="*Give valid email."
+                    document.querySelector('#email').style.border = "1px solid red";
+                   
+               }
+               }
+               if(phone == ''){
+                document.querySelector('#third').innerHTML="*Name is required."
+                document.querySelector('#phone').style.border = "1px solid red";
+               }else{
+                    let p_start = phone.substring(0, 2);
+               if(p_start == "01" && phone.length == 11){
+                    document.querySelector('#third').innerHTML=""
+                    document.querySelector('#phone').style.border = "1px solid gray";
+               }else{
+                    document.querySelector('#third').innerHTML="*Give valid phone number."
+                    document.querySelector('#phone').style.border = "1px solid red";
+               }
+               }
+               if(roll == ''){
+                document.querySelector('#forth').innerHTML="*Name is required."
+                document.querySelector('#roll').style.border = "1px solid red";
+               }else{
+                document.querySelector('#forth').innerHTML=""
+                document.querySelector('#roll').style.border = "1px solid gray";
+               }
+           }else{
+            let status = true;
+            document.querySelector('#first').innerHTML=""
+            document.querySelector('#name').style.border = "1px solid gray";
+            let pattern = /[\w]+.@[\w]+\.[\w]/
+            if(pattern.test(email)){
+                document.querySelector('#second').innerHTML=""
+                document.querySelector('#email').style.border = "1px solid gray";
+            }else{
+                document.querySelector('#second').innerHTML="*Give valid email."
+                document.querySelector('#email').style.border = " red";
+                status = false
+               }
+               let p_start = phone.substring(0, 2);
+               if(p_start == "01" && phone.length == 11){
+                document.querySelector('#third').innerHTML=""
+                document.querySelector('#phone').style.border = "1px solid gray";
+               }else{
+                document.querySelector('#third').innerHTML="*Give valid phone number."
+                document.querySelector('#phone').style.border = " red";
+                status = false
+               }
+               if(isNaN(roll)){
+                document.querySelector('#forth').innerHTML="*Give correct roll number."
+                document.querySelector('#roll').style.border = "1px solid red";
+               }else{
+                document.querySelector('#forth').innerHTML=""
+                document.querySelector('#roll').style.border = "1px solid gray";
+                status = false
+               }if(status = true){
+                document.querySelector("h2").innerHTML =" Succeccfully submit"
+               }else{
+                 document.querySelector("h2").innerHTML ="Something was wrong"
+               }
+           }
+          
+        }
+        }
+     
+    let obj = new Test()
+    </script>
+</body>
+</html>

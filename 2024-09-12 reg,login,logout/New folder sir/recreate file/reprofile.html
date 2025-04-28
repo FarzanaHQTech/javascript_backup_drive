@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Name:<span id="name"></span></h2>
+    <strong>Email:<span id="email"></span></strong>
+    <strong>Phone:<span id="phone"></span></strong>
+
+    <script>
+        let login = document.cookie.split(';');
+        let loginStatus = false;
+        login.map((d,i) =>{
+            if(d.trim()=='login==true'){
+                loginStatus = true
+            }
+        })
+            if (loginStatus) {
+            let data = JSON.parse(sessionStorage.getItem('data'))
+            document.querySelector('#name').innerHTML = data.name
+            document.querySelector('#phone').innerHTML = data.phone
+            document.querySelector('#email').innerHTML = data.email
+        } else {
+            alert('Please login')
+            window.location.assign('/logedin.html')
+        }
+
+        function logout() {
+            document.cookie = 'logedin=true;expires=Thu, 1 Sep 2024 12:00:00 UTC'
+            alert('Logout successfull')
+            window.location.assign('/logedin.html')
+        }
+       
+    </script>
+</body>
+</html>

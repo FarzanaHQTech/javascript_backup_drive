@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd-Even Document</title>
+  </head>
+  <body>
+    <input type="text" id="odd-even" />
+    <span id="num" style="color: red"></span>
+    <br /><br />
+    <button onclick="check()">Result</button>
+    <h2 id="result"></h2>
+    <script>
+      function check() {
+        let x = document.getElementById("odd-even").value;
+        if (x == "") {
+          //   alert("OK");
+          document.getElementById("num").innerHTML = "*Give Input";
+          document.getElementById("result").style.color = "red";
+        } else {
+          if (isNaN(x)) {
+            document.getElementById("num").innerHTML = "Give Number";
+          } else {
+            if (x % 2 == 0) {
+              document.getElementById("result").style.color = "green";
+              document.getElementById("result").innerHTML = "Even Number";
+              document.getElementById("num").innerHTML = "";
+            } else {
+              document.getElementById("result").style.color = "green";
+              document.getElementById("result").innerHTML = "Odd Number";
+              document.getElementById("num").innerHTML = "";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

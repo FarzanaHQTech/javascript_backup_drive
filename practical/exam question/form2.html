@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <script>
+
+        class Validation {
+            emailValidate(email) {
+                let rex = /^[a-z0-9.]{2,}[@][a-z]{2,}[.][a-z]{2,3}$/
+                if (rex.test(email)) {
+                    document.getElementById("email").innerText = "valid Email"
+                } else {
+                    document.getElementById("email").innerText = "Invalid Email"
+                }
+            }
+                phoneValidate(phone) {
+                    // +88 01 761  747406
+                    let rex = /^(\+88)?(01)[1-9]{3,3}[0-9]{6,6}$/
+                    if (rex.test(phone)) {
+                        document.getElementById("phone").innerText = "valid phone"
+                    } else {
+                        document.getElementById("phone").innerText = "Invalid phone"
+                    }
+                }
+
+            }
+
+            const validateObj = new Validation();
+
+        function process() {
+            let name = document.f.name.value;
+            let email = document.f.email.value;
+            let phone = document.f.phone.value;
+            let id = document.f.id.value;
+            let city = document.f.city.value;
+
+            let subject = "";
+            let gender = "";
+
+            for (const subj of document.f.subject) {
+                if (subj.checked) {
+                    subject += subj.value + ", ";
+                }
+            }
+
+            for (const gen of document.f.gender) {
+                if (gen.checked) {
+                    gender = gen.value;
+                }
+            }
+
+            if (name == "") {
+                document.getElementById("name").innerText = "Give your name"
+            }
+            if (email == "") {
+                document.getElementById("email").innerText = "Invalid Email"
+            }
+            if (phone == "") {
+                document.getElementById("phone").innerText = "Invalid phone"
+            }
+            if (id == "") {
+                document.getElementById("id").innerText = "Invalid id"
+            }
+            console.log(name, email, phone, id, gender, subject);
+
+            var w = window.open("", "", "width=500,height=700");
+             w.document.write(`<b>Name :</b> ${name} <br>`)
+             w.document.write(`<b>Email :</b> ${email} <br>`)
+             w.document.write(`<b>Id :</b> ${id} <br>`)
+             w.document.write(`<b>City :</b> ${city} <br>`)
+             w.document.write(`<b>Gender :</b> ${gender} <br>`)
+             w.document.write(`<b>Subject :</b> ${subject} <br>`)
+             w.document.write(`<button onclick="print()">print</button>`)
+             w.document.write(`<button onclick="self.close()">Close</button>`)
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <form onsubmit="event.preventDefault()" action="#" name="f">
+        Name <br>
+        <input type="text" name="name"> <span style="color:red" id="name"></span><br>
+
+        Email <br>
+        <input onblur="validateObj.emailValidate(this.value)" type="text" name="email"> <span style="color:red"
+            id="email"></span><br>
+        Phone <br>
+        <input  onblur="validateObj.phoneValidate(this.value)" type="text" name="phone"> <span style="color:red" id="phone"></span><br>
+
+        Id <br>
+        <input type="text" name="id"> <span style="color:red" id="id"></span><br>
+
+        City <br>
+        <select name="city" id="">
+            <option value="Dhaka">Dhaka</option>
+            <option value="Rajshahi">Rajshahi</option>
+            <option value="Barishal">Barishal</option>
+            <option value="Rangpur">Rangpur</option>
+        </select> <br>
+
+        Subject <br>
+        <input type="checkbox" name="subject" id="" value="PHP">PHP <br>
+        <input type="checkbox" name="subject" id="" value="Javascript">Javascript <br>
+        <input type="checkbox" name="subject" id="" value="C#">C#<br>
+        <input type="checkbox" name="subject" id="" value="Java">Java<br>
+
+        Gender<br>
+        <input type="radio" name="gender" id="" value="Male" checked>Male
+        <input type="radio" name="gender" id="" value="Female">Female <br>
+
+        <button onclick="process()" type="submit">submit</button>
+
+    </form>
+
+
+</body>
+
+</html>

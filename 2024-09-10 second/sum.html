@@ -1,0 +1,42 @@
+
+
+
+<div id="test">
+    <input type="text" class="numbers" /><br /><br />
+</div>
+<h1></h1>
+<button onclick="addmore()">+</button>
+<button onclick="getSum()">Result</button>
+
+<script>
+  // const addmore = () => {
+  //   document.querySelector(
+  //     "#test"
+  //   ).innerHTML += `<input type="text" class="numbers"><br>`;
+  // };
+
+  // function getSum() {
+  //   let elements = document.querySelectorAll(".numbers");
+  //   let result = 0;
+  //   for (let e of elements) {
+  //     result += parseFloat(e.value);
+  //   }
+  //   document.querySelector("h1").innerHTML = result;
+  //   console.log("result");
+  // }
+
+    function addmore() {
+      document.getElementById("test").innerHTML +=
+        '<input type="text" class="numbers"><br><br>';
+    }
+     const getSum = () =>{
+      document.getElementById("test").value;
+      let elements = document.getElementsByClassName("numbers");
+      let result = 0;
+      for (let em of elements) {
+        result += parseFloat(em.value);
+      }
+      document.querySelector("h1").innerHTML = result;
+      console.log(result);
+    }
+</script>

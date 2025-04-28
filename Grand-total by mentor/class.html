@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="form">
+      <input type="text" class="first" id="i" name="1st" />
+      <input type="text" class="first" name="2nd" />
+    </div>
+    <button onclick="test()">Click</button>
+
+    <script>
+      function test() {
+        let d = document.querySelector(".first");
+        console.log(d);
+        // let firstInput = document.getElementsByClassName("first");
+        // document.getElementById(
+        //   "form"
+        // ).innerHTML += `<input type= "text class='first' name="third">`;
+      }
+    </script>
+  </body>
+</html>

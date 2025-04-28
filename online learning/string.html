@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string Document</title>
+</head>
+<body>
+    <script>
+
+        /* string Immutable  origin change kora na*/
+
+
+        // let str = "Bangladesh";
+        // str.length
+        // console.log(str,str.length)*/
+
+        /*template literals*/
+         /*  let specialStr = `This is special "Template literals" ${1+2}`
+         /*   let specialStr = 'This is special "Template literals"';*/
+       /* console.log(specialStr);
+        let obj = {
+            item : "pen",
+            price : 20,
+        }
+        console.log("The cost of ", obj.item, "is", obj.price, "taka")*/
+        /* best practise*/
+         /* let output = `the cost of ${obj.item} is ${obj.price}` 
+        console.log(output)*/
+
+
+         
+        /* escape charecters==\n =next line\t= tab */
+
+        let str = "Bangladesh\nDhaka";
+        console.log(str, str.length);
+
+        /*string Method*/
+        let str2 ="First\tSecond"
+        console.log(str2.toUpperCase());
+
+       let str3 = "    Hello  World To   Javascript    ";
+        console.log(str3.trim());
+
+        let str4 = "01790128471";
+        console.log(str4.slice(0,4));
+
+        let str5 = "hello world!";
+        str5 = str5.replace("hello", "Hi");
+        console.log( str5 );
+        console.log( str5.charAt(3) );
+
+        /* practice session*/
+
+        let fullName = prompt('Enter your full name without any space')
+        let userName = "@"+fullName+ fullName.length;
+        console.log( userName);
+
+        
+
+    </script>
+</body>
+</html>

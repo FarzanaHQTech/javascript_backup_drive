@@ -1,0 +1,44 @@
+<!-- <h1 id="time"></h1>
+<script>
+    setInterval(()=>{
+        let now=new Date()
+        document.getElementById('time').innerHTML=(now.toLocaleTimeString())
+    },1000)
+    
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fields">
+      <input type="text" class="input-field" />
+    </div>
+    <br />
+    <button onclick="addInput()">Add field</button>
+    <button onclick="sumInput()">+</button>
+    <h2 id="result"></h2>
+  </body>
+
+  <script>
+    const addInput = () => {
+      const input = document.createElement("input");
+      input.setAttribute("type", "text");
+      input.setAttribute("class", "input-field");
+      document.getElementById("fields").appendChild(input);
+      console.log(input);
+    };
+
+    const sumInput = () => {
+      const input = document.getElementsByClassName("input_field");
+      let sum = 0;
+      for (const elements of input) {
+        sum += parseFloat(elements.value);
+      }
+      document.querySelector("#result").innerHTML = `Result: ${sum}`;
+    };
+  </script>
+</html>

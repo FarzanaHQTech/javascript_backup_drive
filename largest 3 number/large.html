@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find largest Number Document</title>
+    <style>
+      .wrapper {
+        margin: 20px;
+        padding: 20px;
+        background-color: antiquewhite;
+      }
+      h2 {
+        background-color: black;
+        color: #ffff;
+        padding: 4px;
+        word-spacing: 10px;
+        width: 60%;
+      }
+      input {
+        border-radius: 5px;
+        height: 40px;
+      }
+      label {
+        font-size: 20px;
+      }
+      button {
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 10px;
+        width: 300px;
+        background-color: rgb(23, 155, 133);
+        color: #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Find the greatest value from entered THREE VALUE</h2>
+      <label>Enter Number A:</label>
+      <input type="number" id="n1" /><br /><br />
+      <label>Enter Number B:</label>
+      <input type="number" id="n2" /><br /><br />
+      <label>Enter Number C:</label>
+      <input type="number" id="n3" /><br /><br />
+      <button onclick="check()">Find The Greatest Number</button>
+      <h3 id="result"></h3>
+    </div>
+
+    <script>
+      function check() {
+        let num1, num2, num3;
+        num1 = Number(document.getElementById("n1").value);
+        num2 = Number(document.getElementById("n2").value);
+        num3 = Number(document.getElementById("n3").value);
+
+        // window.alert(num1);
+        //     if(num1=="" || num2 =="" || num3 ==""){
+        //         if(num1==""){
+        //         document.getElementById('n1').style.border="1px solid red";
+        //         document.getElementById("result").innerHTML="Input All Number"
+        //     }else{
+        //         document.getElementById('n1').style.border="1px solid gray";
+        //         document.getElementById("result").innerHTML=""
+        //     }  if(num2==""){
+        //         document.getElementById('n2').style.border="1px solid red";
+        //         document.getElementById("result").innerHTML="Input All Number"
+        //     }else{
+        //         document.getElementById('n2').style.border="1px solid gray";
+        //         document.getElementById("result").innerHTML=""
+        //     }  if(num3==""){
+        //         document.getElementById('n3').style.border="1px solid red";
+        //         document.getElementById("result").innerHTML="Input All Number"
+        //     }else{
+        //         document.getElementById('n3').style.border="1px solid gray";
+        //         document.getElementById("result").innerHTML=""
+        //     }
+        // }
+        if (num1 == "" || num2 == "" || num3 == "") {
+          document.getElementById("result").style.color = "Red";
+          document.getElementById("result").innerHTML =
+            "*Please input all numbers";
+        } else {
+          if (num1 > num2 && num1 > num3) {
+            document.getElementById("result").style.color = "green";
+            document.getElementById("result").innerHTML =
+              "Number A: is Greatest Number";
+          }
+          if (num2 > num1 && num2 > num3) {
+            document.getElementById("result").style.color = "green";
+            document.getElementById("result").innerHTML =
+              "Number B: is Greatest Number";
+          }
+          if (num3 > num1 && num3 > num2) {
+            document.getElementById("result").style.color = "green";
+            document.getElementById("result").innerHTML =
+              "Number C: is Greatest Number";
+          }
+        }
+      }
+
+      //  document.getElementById("result").style.color="red"
+      // document.getElementById("result").innerHTML='*Give all number'
+    </script>
+  </body>
+</html>

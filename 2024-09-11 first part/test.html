@@ -1,0 +1,19 @@
+<p id="demo"></p>
+
+<div id="myDIV">
+    <input type="text" class="test" name="a" id="a">
+    <input type="text" class="test" name="b" id="b">
+    <input type="text" class="test" name="c">
+</div>
+
+<script>
+    document.querySelector('#myDiv').addEventListener('click',()=>{
+        let elements = document.getElementById("myDIV").children;
+        let d=document.getElementById('b').previousElementSibling
+        console.log(d)
+        // for(let p of elements){
+        //     console.log(p)
+        // }
+    })
+
+</script>

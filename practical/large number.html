@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Large number Document</title>
+  </head>
+  <body>
+    A.<input type="text" id="first" />
+    <span id="frst-num"></span>
+    <br /><br />
+    B.<input type="text" id="second" />
+    <span id="second-num"></span>
+    <br /><br />
+    C.<input type="text" id="third" />
+    <span id="third-num"></span>
+    <br /><br />
+    <button onclick="test()">Submit</button>
+    <h3 id="result"></h3>
+
+    <script>
+      function test() {
+        let a = document.getElementById("first").value;
+        let b = document.getElementById("second").value;
+        let c = document.getElementById("third").value;
+        if (a == "" || b == "" || c == "") {
+          document.getElementById("result").innerHTML = "Please give number";
+        } else {
+          if (a >= b && a >= c) {
+            document.getElementById("result").style.coler = "green";
+            document.getElementById("result").innerHTML = "A is Greater";
+          } else if (b >= a && b >= c) {
+            document.getElementById("result").style.coler = "green";
+            document.getElementById("result").innerHTML = "B is Greater";
+          } else {
+            document.getElementById("result").style.coler = "green";
+            document.getElementById("result").innerHTML = "C is Greater";
+          }
+        }
+      }
+
+      let x = 10;
+      let y = x;
+      x = x - 1;
+      let isPrime = true;
+      while (x > 1) {
+        if (y % x == 0) {
+          isPrime = false;
+        }
+        x--;
+      }
+      if (isPrime) {
+        console.log("A prime Number");
+      } else {
+        console.log("Not a prime number");
+      }
+
+      //  if(a==''){
+      //     document.getElementById("first").style.border="red"
+      //     document.getElementById('frst-num').innerHTML='Please give number'
+      //     document.getElementById('result').style.color="red"
+      //  }else{
+      //     if(isNan(a)){
+      //         document.getElementById("a").style.border = "1px solid red";
+      //         document.getElementById("result").innerHTML = "Input valid Number";
+      //     }else{
+
+      //   return a;
+      //  return b;
+      //  return c;
+      // let a = prompt("please enter the first number");
+      // let b = prompt("please enter the second number");
+      // let c = prompt("please enter the first number");
+      // let x = test(a,b,c)
+      // let x = Math.max(a,b,c);
+
+      // console.log(`${a},${b},${c}: largest = ${x}`)
+    </script>
+  </body>
+</html>

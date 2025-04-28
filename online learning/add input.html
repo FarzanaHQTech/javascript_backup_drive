@@ -1,0 +1,64 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input and Sum</title>
+</head>
+<body>
+    <h2>Sum Two Input Values</h2>
+    
+    <!-- First input field -->
+    <label for="input1">Input 1: </label>
+    <input type="number" id="input1" placeholder="Enter a number"><br><br>
+
+   
+
+    <!-- Div where second input field will be added -->
+    <!-- <label for="input1"> </label> -->
+    <div id="inputContainer">Input 2:</div><br>
+     <!-- Button to add the second input field -->
+     <button id="addInputBtn">Add Input Field</button><br><br>
+
+    <!-- Button to calculate the sum -->
+    <button id="sumBtn">Calculate Sum</button>
+
+    <!-- Div to display the result -->
+    <p>Sum: <span id="result">0</span></p>
+
+    <script>
+        // Get the button and the container where new input will be added
+        const addInputBtn = document.getElementById('addInputBtn');
+        const inputContainer = document.getElementById('inputContainer');
+        let secondInput;
+
+        // Event listener to add the second input field
+        addInputBtn.addEventListener('click', function() {
+            // Create new input field dynamically
+            secondInput = document.createElement('input');
+            secondInput.type = 'number';
+            secondInput.id = 'input2';
+            secondInput.placeholder = 'Enter a number';
+            
+            // Append the input field to the input container
+            inputContainer.appendChild(secondInput);
+        });
+
+        // Get the sum button and result display element
+        const sumBtn = document.getElementById('sumBtn');
+        const resultDisplay = document.getElementById('result');
+
+        // Event listener to calculate the sum of the two inputs
+        sumBtn.addEventListener('click', function() {
+            // Get the values of the input fields
+            const input1Value = document.getElementById('input1').value;
+            const input2Value = secondInput ? secondInput.value : 0; // Check if the second input exists
+
+            // Parse the values to numbers and calculate the sum
+            const sum = parseFloat(input1Value) + parseFloat(input2Value);
+
+            // Display the result
+            resultDisplay.textContent = isNaN(sum) ? 0 : sum;
+        });
+    </script>
+</body>
+</html>

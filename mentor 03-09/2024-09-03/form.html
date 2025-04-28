@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="x" placeholder="Name">
+    <span style="color: red;" id="nameError"></span>
+    <br><br>
+    <input type="text" id="y" placeholder="Email">
+    <span style="color: red;" id="emailError"></span>
+    <br><br>
+    <button onclick="test()">Click</button>
+    <h1 id="success"></h1>
+
+    <script>
+        function test(){
+            let x=document.getElementById('x').value
+            let y=document.getElementById('y').value
+            if(x=='' || y==''){
+                if(x==''){
+                    document.getElementById('x').style.border='1px solid red'
+                    document.getElementById('nameError').innerHTML='*Required'
+                }else{
+                    document.getElementById('x').style.border='1px solid gray'
+                    document.getElementById('nameError').innerHTML=''
+                }
+                if(y==''){
+                    document.getElementById('y').style.border='1px solid red'
+                    document.getElementById('emailError').innerHTML='*Required'
+                }else{
+                    document.getElementById('y').style.border='1px solid gray'
+                    document.getElementById('emailError').innerHTML=''
+                }
+            }else{
+                document.getElementById('x').style.border='1px solid gray'
+                document.getElementById('y').style.border='1px solid gray'
+                document.getElementById('nameError').innerHTML=''
+                document.getElementById('emailError').innerHTML=''
+                document.getElementById('success').innerHTML='Congratulations'
+            }
+            
+        }
+    </script>
+</body>
+</html>

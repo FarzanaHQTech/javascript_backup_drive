@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" name="f">
+      <label for="">Name:</label>
+      <input type="text" name="name" />
+      <span id="n_error"></span><br /><br />
+      <label for="">Email:</label>
+      <input onchange="emailValid()" type="text" name="email" />
+      <span id="e_error"></span><br /><br />
+      <label for="">Phone:</label>
+      <input onchange="phoneValid()" type="text" name="phone" />
+      <span id="p_error"></span><br /><br />
+      <label for="">Roll:</label>
+      <input type="text" name="roll" />
+      <span id="r_error"></span><br /><br />
+      <button onclick="checkform()">Submit</button>
+      <h2></h2>
+    </form>
+
+    <script>
+      function emailValid(email) {
+        event.preventDefault();
+        let status = true;
+        rex = /^[a-z]{2,}[@][a-z]{2,}[.]{3,3}$/;
+        if (!rex.test(email)) {
+          document.querySelector("e_error").innerHTML = "wrong email";
+          status = false;
+        }
+      }
+      function phoneValid(phone) {
+        event.preventDefault();
+        let status = true;
+        rex = /^(\+88)?(01)[3-9]{1,1}[0-9]{8,8}$/;
+        if (!rex.test(phone)) {
+          document.querySelector("r_error").innerHTML = "wrong phone";
+        }
+      }
+
+      function checkform() {
+        event.preventDefault();
+        let name = document.f.name.value;
+        let email = document.f.email.value;
+        let phone = document.f.phone.value;
+        let roll = document.f.roll.value;
+        if (name == "") {
+          document.querySelector("#n_error").innerHTML = "invalid name";
+        } else {
+          document.querySelector("#n_error").innerHTML = "";
+        }
+        if (email == "") {
+          document.querySelector("#n_error").innerHTML = "invalid email";
+        } else {
+          document.querySelector("#n_error").innerHTML = "";
+        }
+        if (phone == "") {
+          document.querySelector("#n_error").innerHTML = "invalid phone";
+        } else {
+          document.querySelector("#n_error").innerHTML = "";
+        }
+        if (roll == "") {
+          document.querySelector("#n_error").innerHTML = "invalid roll";
+        } else {
+          document.querySelector("#n_error").innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

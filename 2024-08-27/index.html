@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascrip Document</title>
+  </head>
+  <body>
+    <script>
+      //   document.write(Math.pow(2, 3));
+      //   document.write(Math.abs(0.6));
+      //   document.write(Math.max(2, 4, 5));
+      // now = new Date();
+      // a = 10;
+      // b = "Welcome, Bangladesh";
+      //   document.write(b);
+
+      // c = "He's going to market\r you r enjoy javascript";
+      // d = "Dhaka-Bangladesh";
+      // f = b + " " + " " + d; //concatenation
+      // abc = `${b} ${d}`; //concatenation
+
+      // console.log(abc);
+      // console.log(f);
+      // s = "substring";
+      // p = b.split(", ");
+      // console.log(p);
+      // document.write(b.trim());
+
+      text = "testing: 1, 2, 3,";
+      test = "test4@gmail.com";
+      pattern = /[\w]+@gmail\.[\w]/g; //regular-expression-regExp
+      console.log(pattern.test(test));
+      email = "zana25@gmail.com";
+      pattern = /[a-z]+@gmail\.[\w]/g;//regular-expression-regExp
+      console.log(pattern.test(email));
+
+      let b = [20];
+      let a = [1, 2, "dhaka"];
+      let x = "Welcome, 20";
+      let c = ["hello world"];
+      let d = [20, 19];
+      // let y = [...a, ...x];
+      document.write(...a, ...x)
+      console.log(c, d);
+      console.log(...a, ...b);
+
+      // Copy
+      let people = [
+        { name: "Rachel", age: 24 },
+
+        { name: "David", age: 16 },
+
+        { name: "Aakash", age: 23 },
+
+        { name: "Franklin", age: 26 },
+
+        { name: "Ricky", age: 17 },
+      ];
+
+      let adults = people.filter((big) => big.age >= 18);
+
+      console.log(adults);
+      // try
+
+      let salery = [
+        { name: "Jhon", salery: 20000 },
+        { name: "Sara", salery: 24000 },
+        { name: "Rita", salery: 22000 },
+        { name: "Jhon", salery: 26000 },
+        { name: "zara", salery: 24000 },
+        { name: "Mita", salery: 2500 },
+      ];
+      let payment = salery.filter((big) => big.salery >= 24000);
+      console.log(payment);
+
+
+      // home practise
+      let products = [
+        { name: "product-1", price: 200 },
+        { name: "product-2", price: 300 },
+        { name: "product-3", price: 150 },
+        { name: "product-4", price: 320 },
+        { name: "product-5", price: 400 },
+      ]
+      let total = products.filter((big) => big.price >= 300);
+      document.write(products);
+      console.log(products);
+
+      // let formatted = true; if (formatted) {console.log('The code is easy to read');}
+      // let formatted = true; if (formatted) {document.write(" "+'The code is easy to read')} 
+      // let formatted = true;
+
+if (formatted) {
+  console.log('The code is easy to read');
+}
+
+
+    </script>
+  </body>
+</html>

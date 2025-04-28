@@ -1,0 +1,49 @@
+ <!-- <form action="test.html" id="frm">
+    <input type="text" id="t" name="name">
+    <input type="submit">
+</form> -->
+
+
+<div id="t">
+    <input type="text" class="test" name="a" data-age="30 years" data-first-name="sohel" onkeyup="test()">
+    <input type="text" class="test" name="b"  data-age2="32 years" data-second-name="Morshed" onkeyup="test()">
+    <input type="text" class="test" name="c">
+    <h1>OK</h1>
+</div>
+<button>CLick</button>
+<script>
+    function test(){
+        let age=document.querySelector('.test').dataset.age
+        let name=document.querySelector('.test').dataset.firstName
+        let d=document.querySelector('.test').value
+        // document.getElementsByClassName("test").innerHtml=""
+        
+         console.log(name)
+    }
+    
+
+
+    // function test() {
+    //     let data = document.querySelector('#t').value
+    //     console.log(data)
+    // }
+    // document.getElementById('t').onkeyup=function(e){
+    //     console.log(e)
+    // }
+    // document.getElementById('frm').addEventListener('submit', function (event) {
+    //     event.preventDefault()
+    //     let data = document.querySelector('#t').value
+    //     console.log(data)
+    // })
+
+
+    // document.querySelector('#p').addEventListener('click', (e) => {
+    //     let d=document.getElementById('p').children.length;
+    //     console.log(d)
+    //     // for(let p of e.fromElement.children){
+    //     //     console.log(p)
+    //     // }
+    // })
+
+
+</script>

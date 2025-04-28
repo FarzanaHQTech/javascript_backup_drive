@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NUMBER Document</title>
+  </head>
+  <body>
+    <input type="text" id="Number" />
+    <span id="valid"></span>
+    <br /><br />
+    <button onclick="test()">Submit</button>
+    <h2 id="output"></h2>
+  </body>
+  <script>
+    function test() {
+      let x = document.getElementById("Number").value;
+      let start = x.substring(0, 3);
+      if (x.length == 11) {
+        // alert("OK");
+        document.getElementById("output").innerHTML = "Ok";
+      } else {
+        document.getElementById("output").innerHTML = "Invalid";
+      }
+    }
+  </script>
+</html>

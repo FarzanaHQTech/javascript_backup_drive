@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* function countVowel(str) {
+        let count = 0;
+        for (const char of str) {
+          if (
+            char === "a" ||
+            char === "e" ||
+            char === "i" ||
+            char === "o" ||
+            char === "u"
+          ) {
+            count++;
+          }
+        }
+
+        console.log(count);
+        return count;
+      }
+      countVowel("i love Bangladesh");*/
+      //   console.log(countVowel("Bangladesh"));
+
+
+      //class object start//
+      class Car {
+        name = "Fiat";
+        model = "500";
+        weight = " 850kg";
+        color = " white";
+        constructor(p) {
+          console.log(`constructor is called ` + p);
+        }
+        start() {
+          console.log(this.name + " car is started");
+        }
+        drive() {
+          console.log(
+            this.name + " and this car color is " + this.color + " the car is being driven" // this mane holo class variable = car
+          );
+        }
+        break(t) {
+          console.log(`car is now stopping in ${t} second`);
+        }
+      }
+
+      let car = new Car("before proggrame run");
+      car.start();
+      car.drive();
+      car.break("5");
+      console.log(car);
+
+      // class MyMath {
+      //   firstNumber = 0;
+      //   secondNumber = 0;
+      //   constructor(first, second) {
+      //     this.firstNumber = first;
+      //     this.secondNumber = second;
+      //   }
+      //   add() {
+      //     return this.firstNumber + this.secondNumber;
+      //   }
+      //   mul() {
+      //     return this.firstNumber * this.secondNumber;
+      //   }
+      //   div() {
+      //     return this.firstNumber / this.secondNumber;
+      //   }
+      //   pow() {
+      //     return this.firstNumber ** this.secondNumber;
+      //   }
+      // }
+      // let calc = new MyMath(5, 2);
+      // //   add();
+      // console.log(calc.add());
+      // console.log(calc.mul());
+      // console.log(calc.div());
+      // console.log(calc.pow());
+
+
+      class MyMath{
+        firstNum = 0;
+        secondNum = 0;
+        constructor(fst,scnd){
+          this.firstNum = fst
+          this.secondNum = scnd
+        }
+          add(){
+            return this.firstNum+this.secondNum
+          }
+          multiply(){
+            return this.firstNum* this.secondNum
+          }
+          divi(){
+            return this.firstNum/ this.secondNum
+          }
+       
+      }
+      let calculate = new MyMath( 12, 4);
+     
+      console.log(calculate.add())
+      console.log(calculate.divi())
+    </script>
+  </body>
+</html>

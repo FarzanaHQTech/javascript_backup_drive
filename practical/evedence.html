@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" name="f">
+      <label for="">Name:</label>
+      <input type="text" name="name" />
+      <span id="n_error"></span><br /><br />
+      <label for="">Email:</label>
+      <input onchange="object.emailValid()" type="text" name="email" />
+      <span id="e_error"></span><br /><br />
+      <label for="">Phone:</label>
+      <input onchange="object.phoneValid()" type="text" name="phone" />
+      <span id="p_error"></span><br /><br />
+      <label for="">Roll:</label>
+      <input type="text" name="roll" />
+      <span id="r_error"></span><br /><br />
+      <button onclick="object.check()">Submit</button>
+      <h2></h2>
+    </form>
+
+    <script>
+      class Validation {
+        emailValid(email) {
+          event.preventDefault();
+          let status = true;
+          let rex = /^[a-z1-9]{2,}[@][a-z]{2,}[.][a-z]{2,}$/;
+
+          if (!rex.test(email)) {
+            document.querySelector("#e_error").innerHTML =
+              "Give a valid email id";
+            status = false;
+          }
+        }
+
+        phoneValid(phone) {
+          event.preventDefault();
+          let status = true;
+          let rex = /^(\+88)?(01)[3-9]{1,1}[1-9]{8,8}$/;
+
+          if (!rex.test(phone)) {
+            document.querySelector("#p_error").innerHTML =
+              "Give a valid phone!";
+            status = false;
+          }
+        }
+
+        check() {
+          event.preventDefault();
+          let status = true;
+          let name = document.f.name.value;
+          let email = document.f.email.value;
+          let phone = document.f.phone.value;
+          let roll = document.f.roll.value;
+          if (name === "") {
+            document.querySelector("#n_error").innerHTML = "Give your name!";
+            document.querySelector("#n_error").style.color = "red";
+            status = false;
+          } else {
+            document.querySelector("#n_error").innerHTML = "";
+          }
+          if (email === "") {
+            document.querySelector("#e_error").innerHTML = "Give your email!";
+            document.querySelector("#e_error").style.color = "red";
+            status = false;
+          } else {
+            document.querySelector("#e_error").innerHTML = "";
+            document.querySelector("#e_error").style.color = "green";
+          }
+          if (phone === "") {
+            document.querySelector("#p_error").innerHTML = "Give your phone!";
+            document.querySelector("#p_error").style.color = "red";
+            status = false;
+          } else {
+            document.querySelector("#p_error").innerHTML = "";
+            document.querySelector("#p_error").style.color = "green";
+          }
+          if (roll === "") {
+            document.querySelector("#r_error").innerHTML = "Give your roll!";
+            document.querySelector("#r_error").style.color = "red";
+            status = false;
+          } else if (isNaN(roll)) {
+            document.querySelector("#r_error").innerHTML = "invalid roll!";
+            document.querySelector("#r_error").style.color = "red";
+            status = false;
+          } else {
+            document.querySelector("#r_error").innerHTML = "";
+          }
+          if (status == true) {
+            document.querySelector("h2").innerText = "Submit successfully";
+          } else {
+            document.querySelector("h2").innerText = "Something is error!";
+          }
+        }
+      }
+      let object = new Validation();
+
+      //   factorial;
+      /* function check() {
+        let factNum = parseFloat(document.querySelector("#number").value);
+        let factValue = 1;
+        for (let i = 1; i <= factNum; i++) {
+          factValue *= i;
+        }
+        document.querySelector("h1").innerHTML = factValue;
+      }*/
+    </script>
+  </body>
+</html>

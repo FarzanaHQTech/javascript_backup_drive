@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Document</title>
+     <input type="text" id="first" />
+    <button onclick="check.myName()">Check</button> 
+<br><br>
+    <input type="text" id="second"><br><br>
+    <button onclick="check1.MyName()">submit</button>
+  </head>
+  <body>
+    <script>
+      // Object Oriented Proggramme- OOP
+
+      class Varify {
+        constructor(id) {
+          this.id = id;
+        }
+        myName() {
+          const a = document.getElementById(this.id).value;
+          if (a == "") {
+            console.log("Please give name");
+          } else {
+            console.log("OK");
+          }
+        }
+      }
+      let check = new Varify("first");
+
+
+   class Varify1{
+    constructor(text){
+      this.text = text;
+    }
+    MyName(){
+      const b = document.getElementById(this.text).value;
+      if (b ===''){
+        console.log('input your name')
+      }else{
+        console.log('Thank You')
+      }
+    }
+   }
+  
+   let check1 = new Varify1("second")
+    </script>
+  </body>
+</html>

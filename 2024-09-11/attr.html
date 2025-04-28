@@ -1,0 +1,22 @@
+<style>
+    .b{
+        background-color: red;
+        color: #fff;
+    }
+</style>
+<img src="./pic_bulboff.gif" alt="">
+
+<button id="on">ON</button>
+<button id="off" class="b">OFF</button>
+<script>
+    document.querySelector('#on').addEventListener('click',()=>{
+        document.querySelector('img').src='pic_bulbon.gif'
+        document.querySelector('#off').classList.remove('b')
+        document.querySelector('#on').classList.add('b')
+    })
+    document.querySelector('#off').addEventListener('click',()=>{
+        document.querySelector('img').src='pic_bulboff.gif'
+        document.querySelector('#off').classList.add('b')
+        document.querySelector('#on').classList.remove('b')
+    })
+</script>

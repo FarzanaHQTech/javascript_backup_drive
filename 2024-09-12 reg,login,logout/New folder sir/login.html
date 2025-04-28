@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" id="frm">
+        <input type="text" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        document.getElementById('frm').addEventListener('submit',function(e){
+            e.preventDefault()
+            let email=document.querySelector('#email').value
+            let pass=document.querySelector('#password').value
+            let data=JSON.parse(sessionStorage.getItem('data'))
+            if(data.email==email && pass==data.password){
+                document.cookie='logedin=true;expires=Thu, 12 Sep 2024 12:00:00 UTC'
+                document.cookie='test=dhaka;expires=Thu, 12 Sep 2024 12:00:00 UTC'
+                window.location.assign('/profile.html')
+            }else{
+                alert('Something went wrong')
+            }
+        })
+    </script>
+</body>
+</html>

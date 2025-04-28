@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="first" />
+    <input type="text" id="second" />
+    <button onclick="add()">Sum</button>
+    <div id="result"></div>
+    <script>
+      function add() {
+        let x = Number(document.getElementById("first").value);
+        let y = Number(document.getElementById("second").value);
+        document.getElementById("result").innerText = `Result : ${x + y}`;
+        console.log(x + y);
+        document.getElementById("first").value = "";
+        document.getElementById("second").value = "";
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <input type="text" id="status" />
+    <button onclick="verify()">Verify</button>
+    <h2 id="status"></h2>
+
+    <input type="number" id="number" />
+    <button onclick="status()">Check</button>
+
+    <script>
+      function verify() {
+        let a = document.getElementById("email").value;
+        let pattern = /[a-z0-9]+@[\w]+.[\w]/;
+        let status = pattern.test(a);
+        console.log(status);
+        document.getElementById("status").innerHTML = status;
+      }
+      function status() {
+        let b = document.getElementById("number").value;
+        let pattern = /[\3]+[\4]+[\4]/;
+        let status = pattern.test(b);
+        console.log(result);
+        document.getElementById("status").innerHTML = status;
+      } -->
+<!-- 
+      // function add() {
+      //   // Collect the value
+      //   const x = document.getElementById("first").value;
+      //   const y = document.getElementById("second").value;
+      //   // add collected two value
+      //   document.getElementById("result").innerText = `Result : ${
+      //     Number(x) + Number(y)
+      //   }`;
+      //   // Clear the inputs
+      //   document.getElementById("first").value = "";
+      //   document.getElementById("second").value = "";
+      // } -->
+
+<!-- // mentor
+      // function add() {
+      //   let x = parseFloat(document.getElementById("first").value);
+      //   let y = parseFloat(document.getElementById("second").value);
+      //   let z = x + Y;
+      //   document.getElementById("result").innerHTML = z;
+      // }
+
+      //   let z = document.getElementById("add");
+      //   console.log(z);
+      // }
+      // let a =
+      //   "We need time to heal: Toya Toya and her husband, Sayed Zaman Shawon, who is also an artiste, both joined the movement.";
+
+      // let headline = a.substring(0, 6);
+      // console.log(a);
+      // document.getElementById("content").innerHTML = a;
+      // document.getElementById("heading").innerHTML = "";
+
+      // let name = "Bangladesh";
+      // let c = "class";
+      // // var a = `welcome to ${name} `;
+      // var a = "<h1>Welcome to " + name + " " + c + "</h1>";
+      // document.write(a);
+      // let product = "Apple";
+      // var b = ` Mango ${product} `;
+      // document.write(b); -->

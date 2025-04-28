@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fields">
+      <input type="text" class="input-field" />
+    </div>
+    <br />
+    <button onclick="addField()">Add Field</button>
+    <button onclick="sum()">Sum</button>
+
+    <h2 class="result"></h2>
+
+    <script>
+      const addField = () => {
+        const input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("class", "input-field");
+        document.getElementById("fields").appendChild(input);
+        console.log(input);
+      };
+
+      const sum = () => {
+        const inputs = document.getElementsByClassName("input-field");
+        let summ = 0;
+        for (const element of inputs) {
+          summ += parseFloat(element.value);
+        }
+        document.querySelector(".result").innerHTML = `Result: ${summ}`;
+        console.log(sum);
+      };
+    </script>
+  </body>
+</html>
+
+<!-- <div id="container">
+      <input type="text" class="input-field" /><br /><br />
+    </div>
+    <button onclick="addFn()" class="first">+</button>
+    <button onclick="addSum()" class="first">Result</button>
+    <br />
+    <h2 id="total"></h2> -->
+
+<!-- <div class="container"></div>
+   
+    <button class="add-button" onclick="addFn()">Add Input Fields</button>
+    <div id="inputFields"></div> -->
+
+<!-- <script> -->
+<!-- //   function addFn() {
+      //     const divEle = document.getElementById("inputFields");
+      //     divEle.innerHTML += ` -->
+<!-- //     <div>
+      //       <input type="text" placeholder="Enter value" class="input-field">
+      //       <input type="text" placeholder="Enter value" class="input-field">
+      //     </div> -->
+<!-- //   `;
+      //   } -->
+
+<!-- function addFn() {
+        // let addEle = document.querySelector(".add");
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("class", "input-field");
+        document.getElementById("container").appendChild("input");
+        // addEle.innerHTML += `document.createElement('input'), input type='text'`;
+      }
+      const addSum = () => {
+        const inputs = document.getElementsByClassName("input-field");
+        let summ = 0;
+        for (const element of inputs) {
+          summ += parseFloat(element.value);
+        }
+        document.querySelector("#total").innerHTML = `Result: ${summ}`;
+      }; -->

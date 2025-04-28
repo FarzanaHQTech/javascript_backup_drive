@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <label for="">Name:</label>
+      <input type="text" id="name" />
+      <span style="color: red" id="nameError"></span><br /><br />
+      <label for="">Roll:</label>
+      <input type="text" id="roll" />
+      <span style="color: red" id="rollError"></span><br /><br />
+      <label for="">Email:</label>
+      <input type="text" id="email" />
+      <span style="color: red" id="emailError"></span><br /><br />
+      <label for="">Phone No:</label>
+      <input type="text" id="phone" />
+      <span style="color: red" id="phoneError"></span>
+      <br /><br />
+      <button type onclick=" validation()">Submit</button>
+      <h2 id="success"></h2>
+    </form>
+
+    <script>
+      function validation() {
+        let name = document.getElementById("name").value;
+        let roll = parseFloat(document.getElementById("roll").value);
+        let email = document.getElementById("email").value;
+        let phone = parseFloat(document.getElementById("phone").value);
+        let emailPattern = /[\w]+@[a-z]+\.[a-z]/;
+        let phonePattern = /(0\+8801 || 01)[\3-9]{1}[\0-9]{8}$/;
+        if (name == "" || roll == "" || email == "" || phone == "") {
+          document.getElementById(
+            "nameError, rollError,emailError,success"
+          ).style.color = "red";
+          document.getElementById("success").innerHTML = "*Required";
+          //   document.getElementById("nameError").style.color = "red";
+          //   document.getElementById("rollError").style.color = "red";
+          //   document.getElementById("emailError").style.color = "red";
+          //   document.getElementById("phoneError").style.color = "red";
+          //   document.getElementById("success").innerHTML = "*Required";
+
+          if ((name = "")) {
+            document.getElementById("name").style.color = "red";
+            document.getElementById("success").innerHTML = "*Required Name";
+          } else {
+            document.getElementById("name").style.color = "gray";
+            document.getElementById("success").innerHTML = "OK";
+          }
+          if ((roll = "")) {
+            document.getElementById("roll").style.color = "red";
+            document.getElementById("success").innerHTML = "*Required Name";
+          } else {
+            document.getElementById("roll").style.color = "gray";
+            document.getElementById("success").innerHTML = "OK";
+          }
+          if ((email = "")) {
+            document.getElementById("email").style.color = "red";
+            document.getElementById("success").innerHTML = "*Required Name";
+          } else {
+            document.getElementById("email").style.color = "gray";
+            document.getElementById("success").innerHTML = "OK";
+          }
+          if ((phone = "")) {
+            document.getElementById("phone").style.color = "red";
+            document.getElementById("success").innerHTML = "*Required Name";
+          } else {
+            document.getElementById("phone").style.color = "gray";
+            document.getElementById("success").innerHTML = "OK";
+          }
+          {
+            document.getElementById("name").style.border = "1px solid gray";
+            document.getElementById("roll").style.border = "1px solid gray";
+            //   document.getElementById("email").style.border = "1px solid gray";
+            //   document.getElementById("phone").style.border = "1px solid gray";
+            console.log(x, y);
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("rollError").innerHTML = "";
+            //   document.getElementById("emailError").innerHTML = "";
+            //   document.getElementById("phoneError").innerHTML = "";
+          }
+          if (emailPattern.validation() === false) {
+            document.getElementById("email").style.color = "red";
+            document.getElementById("emailError").style.color =
+              "*Requierd valid email id";
+          } else {
+            document.getElementById("email").style.color = "gray";
+            document.getElementById("success").innerHTML = "Ok";
+          }
+          if (phonePattern.validation() === false) {
+            document.getElementById("phone").style.color = "red";
+            document.getElementById("phoneError").style.color =
+              "*Requierd valid phone number";
+          } else {
+            document.getElementById("phone").style.color = "gray";
+            document.getElementById("success").innerHTML = "Ok";
+          }
+        } else {
+          document.getElementById("email").style.border = "1px solid gray";
+          document.getElementById("emailError").innerHTML = "";
+          document.getElementById("phone").style.border = "1px solid gray";
+          document.getElementById("phoneError").innerHTML = "";
+          document.getElementById("success").innerHTML = "Congratulation";
+        }
+      }
+    </script>
+  </body>
+</html>

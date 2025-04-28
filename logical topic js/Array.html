@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrey_Object Document</title>
+  </head>
+  <body>
+    <script>
+      //1.. let data = ["dhaka", 10, 20, "Bangladesh", "true", 100];
+      //  let l=data length
+      // console.log(data[0]);
+
+      // for (i = 0; i < data.length; i++) {
+      //   console.log(data[i]);
+      // }
+
+      // for (let p of data) {
+      //   console.log(p);
+      // }
+      // for (let p in data) {
+      //   console.log(data[i]);
+      // }
+
+      //2
+      //let data = [15, 2.7, 27.3, 55];
+      // let x = 0;
+
+      // for (let p of data) {
+      //   x += p;
+      // }
+      // console.log(x);
+
+      //3
+      // for (i = 0; i < data.length; i++) {
+      //   // console.log(data[i]);
+
+      //   x = x + data[i];
+      // }
+
+      // console.log(x);
+
+      //4 map/forEach same;
+      // let data = [15, 2.7, 27.3, 55];
+      // let sum = 0;
+      // data.map(function (d, i) {
+      //   sum += d;
+      // });
+      // console.log(sum);
+
+      // data.map(function (d, i) { //call back function
+      //   console.log(d, i);
+      // });
+
+      data.forEach(function (d, i) {
+        sum += d;
+      });
+      console.log(sum);
+
+      // data.forEach(function (d, i) {
+      //   console.log(d, i);
+      // });
+
+      // filter
+      // let dd = data.filter(function (d, i) {
+      //   return d > 2;
+      // });
+      // console.log(dd);
+
+      let data = [15, 2.7, 27.3, 55];
+      let sum = 0;
+      for (let p of data) {
+        continue;
+        sum += p;
+      }
+      console.log(sum);
+    </script>
+  </body>
+</html>

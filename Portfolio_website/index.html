@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farzana - Developer Portfolio</title>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Poppins:wght@100;300;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000033, #240043);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(7, 7, 118, 0.9);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav .left {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff0099;
+    }
+
+    nav ul {
+      display: flex;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff0099;
+      transform: scale(1.1);
+    }
+
+    .hero-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 100px 5%;
+      gap: 30px;
+    }
+
+    .hero-section .text-content {
+      flex: 1;
+      animation: slideInLeft 1.5s ease;
+    }
+
+    .hero-section .text-content h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .hero-section .text-content span {
+      color: #ff0099;
+    }
+
+    .hero-section .text-content p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin: 20px 0;
+    }
+
+    .hero-section .text-content button {
+      background: #ff0099;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero-section .text-content button:hover {
+      background: #cc0077;
+      transform: scale(1.05);
+    }
+
+    .hero-section img {
+      flex: 1;
+      max-width: 100%;
+      border-radius: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .work-section {
+      text-align: center;
+      padding: 80px 5%;
+      background: #110022;
+    }
+
+    .work-section h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .work-section .work-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .work-section .work-item {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ff0099;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .work-section .work-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .work-section .work-item img {
+      max-width: 50px;
+      margin-bottom: 20px;
+    }
+
+    .work-section .work-item h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .work-section .work-item p {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: rgba(0, 0, 33, 0.9);
+      text-align: center;
+      color: #ffffff;
+      padding: 30px;
+    }
+
+    footer p {
+      margin: 10px 0;
+      color: #cccccc;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="left">Farzana Portfolio</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero-section">
+    <div class="text-content">
+      <h1>Hi, I'm <span>Farzana</span> <br> Web Developer</h1>
+     
+      <p > build amazing web experiences that combine creativity, functionality, and performance. Let’s create something incredible together!</p>
+      <span id="element"></span>
+      <button>Contact Me</button>
+    </div>
+    <img src="./image/images.png" alt="Farzana Image">
+  </section>
+
+  <section class="work-section">
+    <h2>What I've Done</h2>
+    <div class="work-items">
+      <div class="work-item">
+        <img src="./image/html-logo.png" alt="HTML">
+        <h3>HTML Developer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta.</p>
+      </div>
+      <div class="work-item">
+        <img src="./image/css3-logo.png" alt="CSS">
+        <h3>CSS Designer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta.</p>
+      </div>
+      <div class="work-item">
+        <img src="./image/html-logo.png" alt="HTML">
+        <h3>PHP Developer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta.</p>
+      </div>
+      <div class="work-item">
+        <img src="./image/programmer-working-image.jpg" alt="JS">
+        <h3>JavaScript Expert</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta.</p>
+      </div>
+      <div class="work-item">
+        <img src="./image/html-logo.png" alt="HTML">
+        <h3>Wordpress Expert</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Farzana's Portfolio | All Rights Reserved</p>
+  </footer>
+
+
+
+
+
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer .', 'Graphic Designer.', 'Other Features learning', 'Web Designer.'],
+      typeSpeed: 50,
+    });
+  </script>
+</body>
+
+</html>

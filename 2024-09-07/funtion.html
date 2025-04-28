@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peoduct Price Document</title>
+  </head>
+  <body>
+    <table border style="border-collapse: collapse">
+      <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Qty</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td><input type="text" id="p-name" name="name" /></td>
+        <td>
+          <input type="text" id="p-price" name="price" onkeyup="test()" />
+        </td>
+        <td><input type="text" id="p-qty" name="qty" onkeyup="test()" /></td>
+        <td><input type="number" id="total" name="total" value="" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="p-name2" name="name2" /></td>
+        <td>
+          <input type="text" id="p-price2" name="price2" onkeyup="test2()" />
+        </td>
+        <td><input type="text" id="p-qty2" name="qty2" onkeyup="test2()" /></td>
+        <td><input type="text" id="total2" name="total2" /></td>
+      </tr>
+      <tr>
+        <th colspan="3">Sub-Total</th>
+        <th>
+          <input
+            type="text"
+            name="sub-total"
+            id="sub-total"
+            onkeyup="test3()"
+          />
+        </th>
+      </tr>
+
+      <tr>
+        <th colspan="3">Discount (%)</th>
+        <th><input type="text" name="discount" id="discount" /></th>
+      </tr>
+      <tr>
+        <th colspan="3">Grand Total</th>
+        <td><input type="text" name="total" id="net-paid" /></td>
+      </tr>
+    </table>
+    <script>
+      const test = () => {
+        const proPrice1 = parseFloat(document.getElementById("p-price").value);
+        const proQuty1 = parseFloat(document.getElementById("p-qty").value);
+        if (proPrice1 && proQuty1) {
+          document.getElementById("total").value = proPrice1 * proQuty1;
+        }
+      };
+      let test2 = () => {
+        const proPrice2 = parseFloat(document.getElementById("p-price2").value);
+        const proQuty2 = parseFloat(document.getElementById("p-qty2").value);
+        if (proPrice2 && proQuty2) {
+          document.getElementById("total2").value = proPrice2 * proQuty2;
+        }
+      };
+      let test3 = () => {
+        const discount1 = parseFloat(document.getElementById("discount").value);
+        if (
+          document.getElementById("total") &&
+          document.getElementById("total2")
+        ) {
+          const product1 = parseFloat(document.getElementById("total").value);
+          const product2 = parseFloat(document.getElementById("total2").value);
+          const sub_total = product1 + product2;
+          const totalDisc = (discount1 * (product1 + product2)) / 100;
+          const totalPay = sub_total - totalDisc;
+
+          document.getElementById("grand-total").value = totalDisc;
+          document.getElementById("net-paid").value = totalPay;
+        }
+      };
+    </script>
+  </body>
+</html>

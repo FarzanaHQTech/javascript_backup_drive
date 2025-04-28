@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" id="frm">
+        <input type="text" id="name" placeholder="Enter name">
+        <input type="text" id="phone" placeholder="Enter phone">
+        <input type="text" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <input type="submit" value="Register">
+    </form>
+<script>
+    document.getElementById('frm').addEventListener('submit',function(e){
+        e.preventDefault()
+        let n=document.querySelector('#name').value
+        let p=document.querySelector('#phone').value
+        let em=document.querySelector('#email').value
+        let pass=document.querySelector('#password').value
+        let data=JSON.stringify({name:n,phone:p,email:em,password:pass})
+        sessionStorage.setItem('data',data)
+        window.location.assign('/login.html')
+    })
+</script>
+</body>
+</html>

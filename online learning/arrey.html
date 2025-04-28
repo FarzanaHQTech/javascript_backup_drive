@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Document</title>
+</head>
+<body>
+    <script>
+        /* position or index matter kore eta mutable change kora jay*/
+        /*let marks = [ 71,60,89,40, 76 ];
+        console.log(marks[0])
+
+        /* value change method */
+        // marks[2] = 66;
+        // console.log(marks)
+
+        /* looping over in Array */
+
+        let heroes = ["Iron Man", "Thor", "Shaktiman", "antman"]
+        console.log(heroes)
+
+        // for(let indx=0; indx<heroes.length; indx++){
+        //     console.log(heroes[indx])
+        // }
+        /* same*/
+        for (let hero of heroes){
+            console.log(hero)
+        }
+
+        /* find the average marks */
+        let marks = [85,97,44,37,76,60];
+        let sum = 0;
+        for(let value of marks){
+           /* sum = sum + value*/  sum+=value;
+        }
+        console.log('Total Marks = ',sum)
+        let avg = sum/marks.length
+        console.log("average = ",avg)
+       
+        /* practise 2: final price after discount 10% off */
+        let items =[250, 645, 300, 900, 50];
+        // let indx = 0;
+        // for(let val of items){
+            // console.log(`Value of item ${indx}=${val}`)
+             // console.log("items price = ",items)
+             for (let i = 0; i < items.length; i++){
+            let offer = items[i]/10;
+            items[i] -= offer
+            // console,log(`"Value after offer =" ${items of [indx]} `)
+           
+        }
+        console.log("Value after offer =",items)
+
+
+        /* Array Methods */
+
+        let foodItems =['potato', 'apple', 'lichi', 'mango'];
+        foodItems.push('chips','burger','ponir');
+        console.log(foodItems)
+        foodItems.pop()
+        console.log(foodItems)
+         let deleteItem =  foodItems.pop()
+        console.log(deleteItem)
+        console.log(foodItems.toString())
+
+
+        let marvelHeroes=['thor','spidrman','ironman']
+        let deHeroes =['superman','batman','antman'];
+        let heroes2 = marvelHeroes.concat(deHeroes);
+        console.log(heroes2);
+
+        marvelHeroes.unshift('Mr.Bean')
+        console.log(marvelHeroes);
+
+
+        let arr=[1,2,3,4,5,6]
+        let x = arr.splice=(2,2,101)
+        console.log(x)
+
+        /* practise first remove and add and end add companies name */
+        let companies = ['Bloomberg','Microsoft','Uber', 'Google','IBM','Netflix'];
+        companies.shift();
+        companies.splice(2,1,'OLA');
+        companies.push('Amazon');
+        console.log(companies);
+
+        const language =[
+            'HTML',
+            'CSS',
+            'JAVASCRIPT'
+          
+        ]
+        language[3] ='Tailwind CSS'
+        language[4]= 'react JS'
+        language[5]='Vue JS'
+        
+        console.log(language)
+        console.log(language[0])
+        //MODERN METHOD//
+        console.log(language.at(5))
+        console.log(typeof language)
+        console.log(language[language.length-2])
+
+        //array method//
+        const name =[ 'DIPA','NIPA', 'RITA','SITA']
+        console.log(name)
+        console.log(name.toString())
+
+        let num = [20,40,80,100,120]
+        console.log(num.join('+'))
+        //concat 2 array//
+        let p = name.concat(num,language)
+        console.log(p)
+
+
+        //multi array akta variable e thakle shobgulo k akta array te ana v.flat//
+
+        const multi = [[1,3,5],[7,9,11]
+                        [2,4,6,8,10,12]
+                    ]
+
+        // console.log(multi)
+        console.log(multi.flat())
+
+    </script>
+</body>
+</html>
